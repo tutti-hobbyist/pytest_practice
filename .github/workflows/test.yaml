@@ -20,13 +20,13 @@ jobs:
     - name: Install rye
       run: |
         curl -sSfL https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
-        export PATH="$HOME/.rye/shims:$PATH"
+        echo "$HOME/.rye/shims" >> $GITHUB_PATH
 
     - name: Check rye version
       run: |
         rye --version
 
-    - name: activate rye
+    - name: Install dependenciesand activate rye
       run: |
         source $HOME/.rye/env
         rye sync
