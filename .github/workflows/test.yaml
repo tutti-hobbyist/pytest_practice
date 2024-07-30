@@ -18,7 +18,13 @@ jobs:
         python-version: "3.12"
 
     - name: Install rye
-      run: curl -sSfL https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
+      run: |
+        curl -sSfL https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
+        export PATH="$HOME/.rye/bin:$PATH"
+
+    - name: Check rye version
+      run: |
+        rye --version
 
     - name: activate rye
       run: |
