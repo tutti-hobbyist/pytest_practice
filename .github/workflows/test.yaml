@@ -17,6 +17,7 @@ jobs:
       with:
         python-version: "3.12"
 
+    # Took much time on debugging the last line setting (https://zenn.dev/ih_mynah/articles/378902d03164c1)
     - name: Install rye
       run: |
         curl -sSfL https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
@@ -26,7 +27,7 @@ jobs:
       run: |
         rye --version
 
-    - name: Install dependenciesand activate rye
+    - name: Install dependencies and activate rye
       run: |
         source $HOME/.rye/env
         rye sync
