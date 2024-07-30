@@ -28,4 +28,4 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest
+        rye run python -m pytest
